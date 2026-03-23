@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>dreadlocksbymire — Natürliche Haar- & Schönheitspflege</title>
+  <title>dreadlocksbymore — Natürliche Haar- & Schönheitspflege</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -62,15 +62,17 @@
     }
 
     .nav-logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.25rem;
-      color: var(--dark);
+      display: flex;
+      align-items: center;
       text-decoration: none;
-      letter-spacing: 0.02em;
     }
 
-    .nav-logo span {
-      color: var(--sage-dark);
+    .nav-logo img {
+      height: 44px;
+      width: auto;
+      object-fit: contain;
+      /* logo has black bg — invert on light nav or keep as-is */
+      border-radius: 8px;
     }
 
     nav ul {
@@ -241,16 +243,30 @@
       border-color: var(--dark);
     }
 
+    /* HERO VISUAL — sized down with border-radius */
     .hero-visual {
       position: relative;
       overflow: hidden;
       background: var(--sage-light);
+      /* Slightly shorter height + rounded corners on inner sides */
+      margin: 2.5rem 2.5rem 2.5rem 0;
+      border-radius: 24px;
+      max-height: calc(100vh - 5rem);
+      min-height: 440px;
+    }
+
+    .hero-visual img#heroImg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 24px;
     }
 
     .hero-card {
       position: absolute;
-      bottom: 3rem;
-      right: 0.5rem;
+      bottom: 2rem;
+      right: 1rem;
       background: var(--white);
       border-radius: 16px;
       padding: 1.25rem 1.5rem;
@@ -884,10 +900,12 @@
       text-decoration: none;
     }
 
-    footer .footer-logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      color: rgba(255, 255, 255, 0.7);
+    footer .footer-logo img {
+      height: 40px;
+      width: auto;
+      object-fit: contain;
+      border-radius: 6px;
+      opacity: 0.85;
     }
 
     /* RESPONSIVE */
@@ -898,7 +916,9 @@
       }
 
       .hero-visual {
-        min-height: 360px;
+        min-height: 320px;
+        margin: 0 1.5rem 1.5rem;
+        border-radius: 20px;
       }
 
       .booking-inner {
@@ -978,13 +998,14 @@
 
   <!-- NAV -->
   <nav>
-    <a href="#" class="nav-logo">dreadlocksbymire<span>.</span></a>
+    <a href="#" class="nav-logo">
+      <img src="dreadlocksbymore.png" alt="Dreadlocks by More">
+    </a>
     <ul>
       <li><a href="#services" data-i18n="nav_services">Leistungen</a></li>
       <li><a href="#gallery" data-i18n="nav_gallery">Galerie</a></li>
       <li><a href="#booking" class="nav-cta" data-i18n="nav_book">Jetzt buchen</a></li>
     </ul>
-    <!-- Language Toggle -->
     <div class="lang-toggle">
       <button class="lang-btn active" id="btnDE" onclick="setLang('de')">DE</button>
       <button class="lang-btn" id="btnEN" onclick="setLang('en')">EN</button>
@@ -1004,11 +1025,11 @@
       </div>
     </div>
     <div class="hero-visual">
-      <img id="heroImg" src="herosectionimage.jpg" alt="dreadlocksbymire salon"
-        style="width:100%;height:100%;object-fit:cover;display:block;"
+      <img id="heroImg" src="herosectionimage.jpg" alt="dreadlocksbymore salon"
+        style="width:100%;height:100%;object-fit:cover;display:block;border-radius:24px;"
         onerror="this.style.display='none';document.getElementById('heroFallback').style.display='block';">
       <svg id="heroFallback" viewBox="0 0 600 700" xmlns="http://www.w3.org/2000/svg"
-        style="width:100%;height:100%;object-fit:cover;display:none;">
+        style="width:100%;height:100%;object-fit:cover;display:none;border-radius:24px;">
         <rect width="600" height="700" fill="#C4D4B8" />
         <ellipse cx="300" cy="350" rx="180" ry="280" fill="#8A9E7A" opacity="0.3" />
         <ellipse cx="200" cy="300" rx="120" ry="200" fill="#5C7249" opacity="0.2" transform="rotate(-20 200 300)" />
@@ -1022,7 +1043,7 @@
         <ellipse cx="390" cy="300" rx="40" ry="18" fill="#5C7249" opacity="0.35" transform="rotate(20 390 300)" />
         <ellipse cx="200" cy="400" rx="35" ry="16" fill="#5C7249" opacity="0.3" transform="rotate(-15 200 400)" />
         <text x="300" y="360" text-anchor="middle" font-family="serif" font-style="italic" font-size="22" fill="#2A2620"
-          opacity="0.12">dreadlocksbymire</text>
+          opacity="0.12">dreadlocksbymore</text>
       </svg>
     </div>
     <div class="hero-card">
@@ -1128,7 +1149,7 @@
             <ellipse cx="280" cy="230" rx="34" ry="16" fill="#5C7249" opacity="0.4" transform="rotate(20 280 230)" />
             <ellipse cx="120" cy="330" rx="30" ry="14" fill="#5C7249" opacity="0.35" transform="rotate(-15 120 330)" />
             <text x="200" y="290" text-anchor="middle" font-family="serif" font-style="italic" font-size="16"
-              fill="#2A2620" opacity="0.15">dreadlocksbymire</text>
+              fill="#2A2620" opacity="0.15">dreadlocksbymore</text>
           </svg></div>
       </div>
       <div class="gallery-item">
@@ -1193,8 +1214,7 @@
       </div>
     </div>
     <p class="gallery-note" data-i18n="gallery_note">Legen Sie <strong>galleryimage1.jpg</strong> …
-      <strong>galleryimage5.jpg</strong> in denselben Ordner wie diese Datei – sie werden automatisch angezeigt.
-    </p>
+      <strong>galleryimage5.jpg</strong> in denselben Ordner wie diese Datei – sie werden automatisch angezeigt.</p>
   </section>
 
   <!-- BOOKING -->
@@ -1203,8 +1223,7 @@
       <div class="booking-left">
         <div class="section-tag" data-i18n="booking_tag">Reservierungen</div>
         <h2 class="section-title" style="color:var(--white);" data-i18n-html="booking_title">Buchen Sie Ihren
-          <em>Besuch</em>
-        </h2>
+          <em>Besuch</em></h2>
         <p data-i18n="booking_desc">Reservieren Sie Ihren Moment der natürlichen Pflege. Wir bestätigen Ihren Termin per
           Telefon oder E-Mail innerhalb von 2 Stunden.</p>
         <div class="booking-perks">
@@ -1225,7 +1244,6 @@
       <div>
         <div class="booking-form">
           <h3 data-i18n="form_title">Termin reservieren</h3>
-
           <div class="form-row">
             <div class="form-group">
               <label for="first_name" data-i18n="form_fname">Vorname</label>
@@ -1236,7 +1254,6 @@
               <input type="text" id="last_name" data-i18n-placeholder="ph_lname" placeholder="Benali" required>
             </div>
           </div>
-
           <div class="form-row">
             <div class="form-group">
               <label for="email_address" data-i18n="form_email">E-Mail-Adresse</label>
@@ -1247,7 +1264,6 @@
               <input type="tel" id="phone_number" placeholder="+212 6XX XXX XXX" required>
             </div>
           </div>
-
           <div class="form-group">
             <label for="preferred_barber" data-i18n="form_stylist">Bevorzugte Stylistin</label>
             <select id="preferred_barber">
@@ -1256,7 +1272,6 @@
               <option value="Other" data-i18n="form_other">Andere</option>
             </select>
           </div>
-
           <div class="form-group">
             <label for="salon" data-i18n="form_salon">Salonstandort</label>
             <select id="salon" required>
@@ -1265,7 +1280,6 @@
               <option value="Rabat">Rabat</option>
             </select>
           </div>
-
           <label class="calendar-label" data-i18n="form_date">Bevorzugtes Datum</label>
           <div class="calendar-wrap">
             <div class="cal-header">
@@ -1286,7 +1300,6 @@
               <div class="cal-days" id="calDays"></div>
             </div>
           </div>
-
           <label class="time-label" data-i18n="form_time">Bevorzugte Uhrzeit</label>
           <div class="time-slots" id="timeSlots">
             <button class="time-slot" data-time="09:00:00">09:00</button>
@@ -1298,11 +1311,9 @@
             <button class="time-slot" data-time="16:00:00">16:00</button>
             <button class="time-slot" data-time="17:00:00">17:00</button>
           </div>
-
           <div class="booking-summary" id="bookingSummary"></div>
           <input type="hidden" id="booking_date">
           <input type="hidden" id="booking_time">
-
           <button class="form-submit" id="request_appointment" data-i18n="form_submit">Termin anfragen</button>
           <div class="toast" id="formToast"></div>
           <p class="form-note" data-i18n="form_note">Wir bestätigen die Verfügbarkeit innerhalb von 2 Stunden.</p>
@@ -1313,173 +1324,96 @@
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-logo">dreadlocksbymire.</div>
-    <div data-i18n="footer_copy">© 2025 dreadlocksbymire. Alle Rechte vorbehalten.</div>
-    <div><a href="mailto:hello@dreadlocksbymire.com">hello@dreadlocksbymire.com</a></div>
+    <div class="footer-logo">
+      <img src="dreadlocksbymore.png" alt="Dreadlocks by More">
+    </div>
+    <div data-i18n="footer_copy">© 2025 dreadlocksbymore. Alle Rechte vorbehalten.</div>
+    <div><a href="/cdn-cgi/l/email-protection#2f474a4343406f4b5d4a4e4b43404c445c4d5642465d4a014c4042"><span
+          class="__cf_email__"
+          data-cfemail="ff979a939390bf9b8d9a9e9b93909c948c9d8692968d9ad19c9092">[email&#160;protected]</span></a></div>
   </footer>
 
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
   <script>
-    /* ══════════════════════════════════════════
-       TRANSLATIONS
-    ══════════════════════════════════════════ */
+    /* TRANSLATIONS */
     const TRANSLATIONS = {
       de: {
-        // Nav
-        nav_services: 'Leistungen',
-        nav_gallery: 'Galerie',
-        nav_book: 'Jetzt buchen',
-        // WhatsApp
+        nav_services: 'Leistungen', nav_gallery: 'Galerie', nav_book: 'Jetzt buchen',
         whatsapp: 'Per WhatsApp chatten',
-        // Hero
         hero_tag: 'Natürliches Hairstudio',
         hero_h1: 'Wo Schönheit<br>auf <em>Natur</em><br>trifft',
         hero_p: 'Ein bewusster, achtsamer Umgang mit Haar und Schönheit – mit pflanzlichen Behandlungen, die gut für Sie und die Umwelt sind.',
-        hero_btn1: 'Termin buchen',
-        hero_btn2: 'Leistungen entdecken',
+        hero_btn1: 'Termin buchen', hero_btn2: 'Leistungen entdecken',
         hero_card_label: 'Zufriedene Kunden',
-        // Services
         services_tag: 'Unser Angebot',
         services_title: 'Behandlungen mit<br><em>Intention</em>',
         services_subtitle: 'Jede Leistung verwendet sorgfältig ausgewählte natürliche Inhaltsstoffe, die Ihr Haar pflegen und umweltschonend sind.',
-        s1_title: 'Schnitt & Styling',
-        s1_desc: 'Eine persönliche Beratung, gefolgt von einem Präzisionsschnitt, natürlichem Föhnen und Finish mit biologischen Stylingprodukten.',
-        s1_price: 'Ab 350 MAD',
-        s2_title: 'Botanische Farbe',
-        s2_desc: 'Pflanzliche Färbebehandlungen mit Henna, Kräutertönen und ammoniakfreien Farben für strahlende, schonende Ergebnisse.',
-        s2_price: 'Ab 550 MAD',
-        s3_title: 'Tiefenreparatur',
-        s3_desc: 'Eine intensive Bio-Maske mit Arganöl, Aloe Vera und Keratinproteinen, die Glanz zurückbringt und jeden Strang stärkt.',
-        s3_price: 'Ab 200 MAD',
-        s4_title: 'Kopfhaut-Ritual',
-        s4_desc: 'Eine erdende Kopfhautmassage mit ätherischen Ölen, die die Durchblutung anregt, den Talg reguliert und die Sinne entspannt.',
-        s4_price: 'Ab 150 MAD',
-        s5_title: 'Brautpaket',
-        s5_desc: 'Ein ganztägiges Brauterlebnis: Probesitzung, Styling am Morgen, natürliches Make-up und ein kostenloses Auffrischungsset.',
-        s5_price: 'Ab 1.800 MAD',
-        s6_title: 'Kinderschnitt',
-        s6_desc: 'Ein sanftes, fröhliches Erlebnis für Kinder – mit Geduld, natürlichen Produkten und einer herzlichen Atmosphäre.',
-        s6_price: 'Ab 120 MAD',
-        // Gallery
-        gallery_tag: 'Unsere Arbeit',
-        gallery_title: 'Mit <em>Sorgfalt</em> gestaltet',
+        s1_title: 'Schnitt & Styling', s1_desc: 'Eine persönliche Beratung, gefolgt von einem Präzisionsschnitt, natürlichem Föhnen und Finish mit biologischen Stylingprodukten.', s1_price: 'Ab 350 MAD',
+        s2_title: 'Botanische Farbe', s2_desc: 'Pflanzliche Färbebehandlungen mit Henna, Kräutertönen und ammoniakfreien Farben für strahlende, schonende Ergebnisse.', s2_price: 'Ab 550 MAD',
+        s3_title: 'Tiefenreparatur', s3_desc: 'Eine intensive Bio-Maske mit Arganöl, Aloe Vera und Keratinproteinen, die Glanz zurückbringt und jeden Strang stärkt.', s3_price: 'Ab 200 MAD',
+        s4_title: 'Kopfhaut-Ritual', s4_desc: 'Eine erdende Kopfhautmassage mit ätherischen Ölen, die die Durchblutung anregt, den Talg reguliert und die Sinne entspannt.', s4_price: 'Ab 150 MAD',
+        s5_title: 'Brautpaket', s5_desc: 'Ein ganztägiges Brauterlebnis: Probesitzung, Styling am Morgen, natürliches Make-up und ein kostenloses Auffrischungsset.', s5_price: 'Ab 1.800 MAD',
+        s6_title: 'Kinderschnitt', s6_desc: 'Ein sanftes, fröhliches Erlebnis für Kinder – mit Geduld, natürlichen Produkten und einer herzlichen Atmosphäre.', s6_price: 'Ab 120 MAD',
+        gallery_tag: 'Unsere Arbeit', gallery_title: 'Mit <em>Sorgfalt</em> gestaltet',
         gallery_note: 'Legen Sie <strong>galleryimage1.jpg</strong> … <strong>galleryimage5.jpg</strong> in denselben Ordner wie diese Datei – sie werden automatisch angezeigt.',
-        // Booking
-        booking_tag: 'Reservierungen',
-        booking_title: 'Buchen Sie Ihren <em>Besuch</em>',
+        booking_tag: 'Reservierungen', booking_title: 'Buchen Sie Ihren <em>Besuch</em>',
         booking_desc: 'Reservieren Sie Ihren Moment der natürlichen Pflege. Wir bestätigen Ihren Termin per Telefon oder E-Mail innerhalb von 2 Stunden.',
-        perk1: 'Kostenlose Beratung vor jeder Leistung',
-        perk2: '100% biologische & pflanzliche Produkte',
-        perk3: 'Einfache Umbuchung bis 24h vorher',
-        perk4: 'Dedizierter Kundenparkplatz',
-        form_title: 'Termin reservieren',
-        form_fname: 'Vorname',
-        form_lname: 'Nachname',
-        ph_fname: 'Leila',
-        ph_lname: 'Benali',
-        form_email: 'E-Mail-Adresse',
-        form_phone: 'Telefonnummer',
-        form_stylist: 'Bevorzugte Stylistin',
-        form_stylist_opt: 'Keine Präferenz / beliebig',
-        form_other: 'Andere',
-        form_salon: 'Salonstandort',
-        form_salon_opt: 'Standort wählen…',
-        form_date: 'Bevorzugtes Datum',
-        form_time: 'Bevorzugte Uhrzeit',
-        form_submit: 'Termin anfragen',
-        form_submitting: 'Wird gesendet…',
+        perk1: 'Kostenlose Beratung vor jeder Leistung', perk2: '100% biologische & pflanzliche Produkte',
+        perk3: 'Einfache Umbuchung bis 24h vorher', perk4: 'Dedizierter Kundenparkplatz',
+        form_title: 'Termin reservieren', form_fname: 'Vorname', form_lname: 'Nachname',
+        ph_fname: 'Leila', ph_lname: 'Benali', form_email: 'E-Mail-Adresse', form_phone: 'Telefonnummer',
+        form_stylist: 'Bevorzugte Stylistin', form_stylist_opt: 'Keine Präferenz / beliebig', form_other: 'Andere',
+        form_salon: 'Salonstandort', form_salon_opt: 'Standort wählen…',
+        form_date: 'Bevorzugtes Datum', form_time: 'Bevorzugte Uhrzeit',
+        form_submit: 'Termin anfragen', form_submitting: 'Wird gesendet…',
         form_note: 'Wir bestätigen die Verfügbarkeit innerhalb von 2 Stunden.',
         toast_error_fields: '✗ Bitte füllen Sie alle Pflichtfelder aus und wählen Sie Datum & Uhrzeit.',
         toast_success: '✓ Termin angefragt! Wir bestätigen innerhalb von 2 Stunden.',
         toast_network: '✗ Netzwerkfehler. Bitte erneut versuchen.',
-        // Calendar
         months: ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'],
         weekdays: ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'],
-        summary_date_only: '📅 {date} — bitte Uhrzeit wählen',
-        summary_full: '✓ {date} um {time} Uhr',
-        // Footer
-        footer_copy: '© 2025 dreadlocksbymire. Alle Rechte vorbehalten.',
+        summary_date_only: '📅 {date} — bitte Uhrzeit wählen', summary_full: '✓ {date} um {time} Uhr',
+        footer_copy: '© 2025 dreadlocksbymore. Alle Rechte vorbehalten.',
       },
       en: {
-        // Nav
-        nav_services: 'Services',
-        nav_gallery: 'Gallery',
-        nav_book: 'Book now',
-        // WhatsApp
+        nav_services: 'Services', nav_gallery: 'Gallery', nav_book: 'Book now',
         whatsapp: 'Chat on WhatsApp',
-        // Hero
         hero_tag: 'Natural Hair Studio',
-        hero_h1: 'Where beauty<br>meets <em>nature\'s</em><br>touch',
+        hero_h1: "Where beauty<br>meets <em>nature's</em><br>touch",
         hero_p: 'A slow, intentional approach to hair and beauty — using plant-based treatments that care for you and the earth.',
-        hero_btn1: 'Book an appointment',
-        hero_btn2: 'Explore services',
+        hero_btn1: 'Book an appointment', hero_btn2: 'Explore services',
         hero_card_label: 'Happy clients served',
-        // Services
-        services_tag: 'Our Offerings',
-        services_title: 'Treatments made<br>with <em>intention</em>',
+        services_tag: 'Our Offerings', services_title: 'Treatments made<br>with <em>intention</em>',
         services_subtitle: 'Every service uses carefully selected natural ingredients that nourish your hair and are gentle on the environment.',
-        s1_title: 'Signature Cut & Style',
-        s1_desc: 'A personalised consultation followed by a precision cut, natural blow-dry, and finish using organic styling products.',
-        s1_price: 'From 350 MAD',
-        s2_title: 'Botanical Colour',
-        s2_desc: 'Plant-based colour treatments including henna, herbal tints, and ammonia-free dyes for vibrant, damage-free results.',
-        s2_price: 'From 550 MAD',
-        s3_title: 'Deep Repair Treatment',
-        s3_desc: 'An intensive organic mask with argan oil, aloe vera, and keratin proteins to restore shine and strengthen every strand.',
-        s3_price: 'From 200 MAD',
-        s4_title: 'Scalp Ritual',
-        s4_desc: 'A grounding scalp massage using essential oils that stimulate circulation, balance oils, and deeply relax the senses.',
-        s4_price: 'From 150 MAD',
-        s5_title: 'Bridal Package',
-        s5_desc: 'A full-day bridal experience: trial session, morning-of styling, natural makeup, and complimentary post-day touch-up kit.',
-        s5_price: 'From 1,800 MAD',
-        s6_title: 'Children\'s Cut',
-        s6_desc: 'A gentle, fun experience for children — patience, natural products, and a welcoming atmosphere every little one will love.',
-        s6_price: 'From 120 MAD',
-        // Gallery
-        gallery_tag: 'Our Work',
-        gallery_title: 'Crafted with <em>care</em>',
-        gallery_note: 'Place <strong>galleryimage1.jpg</strong> … <strong>galleryimage5.jpg</strong> in the same folder as this file — they\'ll appear automatically.',
-        // Booking
-        booking_tag: 'Reservations',
-        booking_title: 'Book your <em>visit</em>',
-        booking_desc: 'Reserve your moment of natural care. We\'ll confirm your appointment by phone or email within 2 hours.',
-        perk1: 'Free consultation before every service',
-        perk2: '100% organic & plant-based products',
-        perk3: 'Easy reschedule up to 24h before',
-        perk4: 'Dedicated parking for clients',
-        form_title: 'Reserve your appointment',
-        form_fname: 'First name',
-        form_lname: 'Last name',
-        ph_fname: 'Leila',
-        ph_lname: 'Benali',
-        form_email: 'Email address',
-        form_phone: 'Phone number',
-        form_stylist: 'Preferred stylist',
-        form_stylist_opt: 'No preference / any available',
-        form_other: 'Other',
-        form_salon: 'Salon location',
-        form_salon_opt: 'Choose a location…',
-        form_date: 'Preferred date',
-        form_time: 'Preferred time',
-        form_submit: 'Request appointment',
-        form_submitting: 'Sending…',
-        form_note: 'We\'ll confirm availability within 2 hours.',
+        s1_title: 'Signature Cut & Style', s1_desc: 'A personalised consultation followed by a precision cut, natural blow-dry, and finish using organic styling products.', s1_price: 'From 350 MAD',
+        s2_title: 'Botanical Colour', s2_desc: 'Plant-based colour treatments including henna, herbal tints, and ammonia-free dyes for vibrant, damage-free results.', s2_price: 'From 550 MAD',
+        s3_title: 'Deep Repair Treatment', s3_desc: 'An intensive organic mask with argan oil, aloe vera, and keratin proteins to restore shine and strengthen every strand.', s3_price: 'From 200 MAD',
+        s4_title: 'Scalp Ritual', s4_desc: 'A grounding scalp massage using essential oils that stimulate circulation, balance oils, and deeply relax the senses.', s4_price: 'From 150 MAD',
+        s5_title: 'Bridal Package', s5_desc: 'A full-day bridal experience: trial session, morning-of styling, natural makeup, and complimentary post-day touch-up kit.', s5_price: 'From 1,800 MAD',
+        s6_title: "Children's Cut", s6_desc: 'A gentle, fun experience for children — patience, natural products, and a welcoming atmosphere every little one will love.', s6_price: 'From 120 MAD',
+        gallery_tag: 'Our Work', gallery_title: 'Crafted with <em>care</em>',
+        gallery_note: "Place <strong>galleryimage1.jpg</strong> … <strong>galleryimage5.jpg</strong> in the same folder as this file — they'll appear automatically.",
+        booking_tag: 'Reservations', booking_title: 'Book your <em>visit</em>',
+        booking_desc: "Reserve your moment of natural care. We'll confirm your appointment by phone or email within 2 hours.",
+        perk1: 'Free consultation before every service', perk2: '100% organic & plant-based products',
+        perk3: 'Easy reschedule up to 24h before', perk4: 'Dedicated parking for clients',
+        form_title: 'Reserve your appointment', form_fname: 'First name', form_lname: 'Last name',
+        ph_fname: 'Leila', ph_lname: 'Benali', form_email: 'Email address', form_phone: 'Phone number',
+        form_stylist: 'Preferred stylist', form_stylist_opt: 'No preference / any available', form_other: 'Other',
+        form_salon: 'Salon location', form_salon_opt: 'Choose a location…',
+        form_date: 'Preferred date', form_time: 'Preferred time',
+        form_submit: 'Request appointment', form_submitting: 'Sending…',
+        form_note: "We'll confirm availability within 2 hours.",
         toast_error_fields: '✗ Please fill in all required fields and select a date & time.',
-        toast_success: '✓ Appointment requested! We\'ll confirm within 2 hours.',
+        toast_success: "✓ Appointment requested! We'll confirm within 2 hours.",
         toast_network: '✗ Network error. Please try again.',
-        // Calendar
         months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
         weekdays: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
-        summary_date_only: '📅 {date} — please select a time',
-        summary_full: '✓ {date} at {time}',
-        // Footer
-        footer_copy: '© 2025 dreadlocksbymire. All rights reserved.',
+        summary_date_only: '📅 {date} — please select a time', summary_full: '✓ {date} at {time}',
+        footer_copy: '© 2025 dreadlocksbymore. All rights reserved.',
       }
     };
 
-    /* ══════════════════════════════════════════
-       LANGUAGE SWITCHER
-    ══════════════════════════════════════════ */
     let currentLang = 'de';
 
     function setLang(lang) {
@@ -1487,112 +1421,56 @@
       document.documentElement.lang = lang;
       document.getElementById('btnDE').classList.toggle('active', lang === 'de');
       document.getElementById('btnEN').classList.toggle('active', lang === 'en');
-
       const t = TRANSLATIONS[lang];
-
-      // Simple text nodes
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (t[key] !== undefined) el.textContent = t[key];
-      });
-
-      // HTML content (allows <em>, <br>, <strong>)
-      document.querySelectorAll('[data-i18n-html]').forEach(el => {
-        const key = el.getAttribute('data-i18n-html');
-        if (t[key] !== undefined) el.innerHTML = t[key];
-      });
-
-      // Placeholders
-      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-        const key = el.getAttribute('data-i18n-placeholder');
-        if (t[key] !== undefined) el.placeholder = t[key];
-      });
-
-      // Select option defaults
-      const stylistSel = document.getElementById('preferred_barber');
-      if (stylistSel.options[0]) stylistSel.options[0].text = t.form_stylist_opt;
-      if (stylistSel.options[2]) stylistSel.options[2].text = t.form_other;
-      const salonSel = document.getElementById('salon');
-      if (salonSel.options[0]) salonSel.options[0].text = t.form_salon_opt;
-
-      // Re-render calendar (uses locale-aware month names & weekdays)
-      renderCalendar();
-      updateSummary();
+      document.querySelectorAll('[data-i18n]').forEach(el => { const k = el.getAttribute('data-i18n'); if (t[k] !== undefined) el.textContent = t[k]; });
+      document.querySelectorAll('[data-i18n-html]').forEach(el => { const k = el.getAttribute('data-i18n-html'); if (t[k] !== undefined) el.innerHTML = t[k]; });
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => { const k = el.getAttribute('data-i18n-placeholder'); if (t[k] !== undefined) el.placeholder = t[k]; });
+      const sty = document.getElementById('preferred_barber');
+      if (sty.options[0]) sty.options[0].text = t.form_stylist_opt;
+      if (sty.options[2]) sty.options[2].text = t.form_other;
+      const sal = document.getElementById('salon');
+      if (sal.options[0]) sal.options[0].text = t.form_salon_opt;
+      renderCalendar(); updateSummary();
     }
 
-    /* ══════════════════════════════════════════
-       CALENDAR
-    ══════════════════════════════════════════ */
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-
-    let viewYear = today.getFullYear();
-    let viewMonth = today.getMonth();
-    let selectedDate = null;
-    let selectedTime = null;
+    const today = new Date(); today.setHours(0, 0, 0, 0);
+    let viewYear = today.getFullYear(), viewMonth = today.getMonth();
+    let selectedDate = null, selectedTime = null;
 
     function renderCalendar() {
       const t = TRANSLATIONS[currentLang];
       document.getElementById('calTitle').textContent = t.months[viewMonth] + ' ' + viewYear;
-
-      // Update weekday headers
-      const wdCells = document.querySelectorAll('.cal-wd');
-      wdCells.forEach((cell, i) => { cell.textContent = t.weekdays[i]; });
-
+      document.querySelectorAll('.cal-wd').forEach((cell, i) => { cell.textContent = t.weekdays[i]; });
       const firstDay = new Date(viewYear, viewMonth, 1).getDay();
       const daysInMonth = new Date(viewYear, viewMonth + 1, 0).getDate();
       const container = document.getElementById('calDays');
       container.innerHTML = '';
-
-      for (let i = 0; i < firstDay; i++) {
-        const empty = document.createElement('div');
-        empty.className = 'cal-day cal-day--empty';
-        container.appendChild(empty);
-      }
-
+      for (let i = 0; i < firstDay; i++) { const e = document.createElement('div'); e.className = 'cal-day cal-day--empty'; container.appendChild(e); }
       for (let d = 1; d <= daysInMonth; d++) {
         const btn = document.createElement('button');
-        btn.className = 'cal-day';
-        btn.textContent = d;
-
+        btn.className = 'cal-day'; btn.textContent = d;
         const thisDate = new Date(viewYear, viewMonth, d);
         const isToday = thisDate.getTime() === today.getTime();
         const isPast = thisDate < today;
-
         if (isToday) btn.classList.add('cal-day--today');
         if (isPast) { btn.classList.add('cal-day--disabled'); btn.disabled = true; }
-
         if (selectedDate) {
           const sel = new Date(selectedDate);
-          if (sel.getFullYear() === viewYear && sel.getMonth() === viewMonth && sel.getDate() === d) {
-            btn.classList.add('cal-day--selected');
-          }
+          if (sel.getFullYear() === viewYear && sel.getMonth() === viewMonth && sel.getDate() === d) btn.classList.add('cal-day--selected');
         }
-
         btn.addEventListener('click', () => {
           if (isPast) return;
           selectedDate = `${viewYear}-${String(viewMonth + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
           document.getElementById('booking_date').value = selectedDate;
-          updateSummary();
-          renderCalendar();
+          updateSummary(); renderCalendar();
         });
-
         container.appendChild(btn);
       }
     }
 
-    document.getElementById('calPrev').addEventListener('click', () => {
-      viewMonth--; if (viewMonth < 0) { viewMonth = 11; viewYear--; }
-      renderCalendar();
-    });
-    document.getElementById('calNext').addEventListener('click', () => {
-      viewMonth++; if (viewMonth > 11) { viewMonth = 0; viewYear++; }
-      renderCalendar();
-    });
+    document.getElementById('calPrev').addEventListener('click', () => { viewMonth--; if (viewMonth < 0) { viewMonth = 11; viewYear--; } renderCalendar(); });
+    document.getElementById('calNext').addEventListener('click', () => { viewMonth++; if (viewMonth > 11) { viewMonth = 0; viewYear++; } renderCalendar(); });
 
-    /* ══════════════════════════════════════════
-       TIME SLOTS
-    ══════════════════════════════════════════ */
     document.querySelectorAll('.time-slot').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.time-slot').forEach(b => b.classList.remove('selected'));
@@ -1607,34 +1485,23 @@
       const t = TRANSLATIONS[currentLang];
       const summary = document.getElementById('bookingSummary');
       const locale = currentLang === 'de' ? 'de-DE' : 'en-GB';
-
       if (selectedDate && selectedTime) {
         const d = new Date(selectedDate + 'T00:00:00');
         const readable = d.toLocaleDateString(locale, { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
-        const time = selectedTime.slice(0, 5);
-        summary.textContent = t.summary_full.replace('{date}', readable).replace('{time}', time);
+        summary.textContent = t.summary_full.replace('{date}', readable).replace('{time}', selectedTime.slice(0, 5));
         summary.classList.add('visible');
       } else if (selectedDate) {
         const d = new Date(selectedDate + 'T00:00:00');
         const readable = d.toLocaleDateString(locale, { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
         summary.textContent = t.summary_date_only.replace('{date}', readable);
         summary.classList.add('visible');
-      } else {
-        summary.classList.remove('visible');
-      }
+      } else { summary.classList.remove('visible'); }
     }
 
-    // Initial render in German
     renderCalendar();
 
-    /* ══════════════════════════════════════════
-       FORM SUBMIT
-    ══════════════════════════════════════════ */
     document.getElementById('request_appointment').addEventListener('click', async function () {
-      const btn = this;
-      const toast = document.getElementById('formToast');
-      const t = TRANSLATIONS[currentLang];
-
+      const btn = this, toast = document.getElementById('formToast'), t = TRANSLATIONS[currentLang];
       const first_name = document.getElementById('first_name').value.trim();
       const last_name = document.getElementById('last_name').value.trim();
       const email_address = document.getElementById('email_address').value.trim();
@@ -1643,63 +1510,27 @@
       const salon = document.getElementById('salon').value;
       const booking_date = document.getElementById('booking_date').value;
       const booking_time = document.getElementById('booking_time').value;
-
       if (!first_name || !last_name || !phone_number || !salon || !booking_date || !booking_time) {
-        toast.textContent = t.toast_error_fields;
-        toast.className = 'toast error';
-        return;
+        toast.textContent = t.toast_error_fields; toast.className = 'toast error'; return;
       }
-
-      btn.disabled = true;
-      btn.textContent = t.form_submitting;
-      toast.className = 'toast';
-
-      const payload = {
-        doctype: 'Booking',
-        first_name, last_name, email_address, phone_number,
-        preferred_barber: preferred_barber || '',
-        salon, booking_date, booking_time,
-      };
-
+      btn.disabled = true; btn.textContent = t.form_submitting; toast.className = 'toast';
+      const payload = { doctype: 'Booking', first_name, last_name, email_address, phone_number, preferred_barber: preferred_barber || '', salon, booking_date, booking_time };
       try {
-        const res = await fetch('/api/resource/Booking', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'X-Frappe-CSRF-Token': typeof frappe !== 'undefined' ? frappe.csrf_token : ''
-          },
-          body: JSON.stringify(payload)
-        });
-
+        const res = await fetch('/api/resource/Booking', { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Frappe-CSRF-Token': typeof frappe !== 'undefined' ? frappe.csrf_token : '' }, body: JSON.stringify(payload) });
         const data = await res.json();
-
         if (res.ok && data.data) {
-          toast.textContent = t.toast_success;
-          toast.className = 'toast success';
-          ['first_name', 'last_name', 'email_address', 'phone_number', 'preferred_barber', 'salon'].forEach(id => {
-            const el = document.getElementById(id); if (el) el.value = '';
-          });
+          toast.textContent = t.toast_success; toast.className = 'toast success';
+          ['first_name', 'last_name', 'email_address', 'phone_number', 'preferred_barber', 'salon'].forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; });
           selectedDate = null; selectedTime = null;
-          document.getElementById('booking_date').value = '';
-          document.getElementById('booking_time').value = '';
+          document.getElementById('booking_date').value = ''; document.getElementById('booking_time').value = '';
           document.querySelectorAll('.time-slot').forEach(b => b.classList.remove('selected'));
           document.getElementById('bookingSummary').classList.remove('visible');
           renderCalendar();
-        } else {
-          const msg = data?.exception || data?.message || 'Something went wrong.';
-          toast.textContent = '✗ ' + msg;
-          toast.className = 'toast error';
-        }
-      } catch (err) {
-        toast.textContent = t.toast_network;
-        toast.className = 'toast error';
-      }
-
-      btn.disabled = false;
-      btn.textContent = t.form_submit;
+        } else { toast.textContent = '✗ ' + (data?.exception || data?.message || 'Something went wrong.'); toast.className = 'toast error'; }
+      } catch (err) { toast.textContent = t.toast_network; toast.className = 'toast error'; }
+      btn.disabled = false; btn.textContent = t.form_submit;
     });
   </script>
-
 </body>
 
 </html>
